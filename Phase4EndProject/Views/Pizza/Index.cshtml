@@ -1,13 +1,11 @@
-﻿@model IEnumerable<Phase4EndProject.Models.Pizza>
+﻿@model IEnumerable<Phase4EndProject .Models.Pizza>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1 style="color:darkblue">Pizza List</h1>
+<h1 style="color:firebrick">Pizza List</h1>
 
-
-    
 <table class="table" id="cart">
     <thead>
         <tr>
@@ -21,27 +19,31 @@
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
+
             </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PizzaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            
-            <td>
-                @Html.ActionLink("Add to cart","Cart",new {id=item.PizzaId }) 
-               
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PizzaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Add to Cart", "Cart", new
+                        {
+                            id =
+                             item.PizzaId
+                        })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
